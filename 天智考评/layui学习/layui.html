@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>开始使用layui</title>
+		<link rel="stylesheet" href="css/layui.css">
+	</head>
+
+	<body>
+		<!-- 你的HTML代码 -->
+		<script src="layui.js"></script>
+		<script>
+			//一般直接写在一个js文件中
+			layui.use(['layer', 'form'], function() {
+				var layer = layui.layer,
+					form = layui.form;
+
+				//layer.msg('Hello World');
+				//layer.alert("Hello World")
+				//				layer.alert('内容', {
+				//					icon: 1,
+				// 					skin: 'layer-ext-moon' //该皮肤由layer.seaning.com友情扩展。关于皮肤的扩展规则，去这里查阅
+				//				})
+				
+				//询问框
+				layer.open({
+					btn: ['重要', '奇葩'], //按钮
+					type:1,
+					title: '问题',
+					content: '您是如何看待前端开发？',
+					skin: 'layui-layer-molv',
+					icon: 1,
+					area: ['150px'],
+					offset: 'rt',
+					closeBtn: 1,
+					shade: [0.8,'red'],
+					shadeClose:0,
+					//time: 2000,
+					id: "xx",
+					anim: 4,
+					isOutAnim: false,
+					maxmin: 1,
+					//点击OK之后的回调函数
+					yes: function(index,layero){
+						layer.close(index)
+						layer.msg('ok')	
+					},
+					cancel: function(){
+						layer.msg('关闭')	
+					},
+					btn2: function(){
+						layer.msg('btn2')	
+					},
+					
+					
+					
+					
+				});
+				
+			});
+		</script>
+	</body>
+
+</html>
